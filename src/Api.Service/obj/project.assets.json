@@ -1076,11 +1076,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/home/gabriel/Desktop/DevLinks.Api/src/Api.Service/Service.csproj",
+      "projectUniqueName": "/home/gabriel/Desktop/Devlinks.Api/src/Api.Service/Service.csproj",
       "projectName": "Service",
-      "projectPath": "/home/gabriel/Desktop/DevLinks.Api/src/Api.Service/Service.csproj",
+      "projectPath": "/home/gabriel/Desktop/Devlinks.Api/src/Api.Service/Service.csproj",
       "packagesPath": "/home/gabriel/.nuget/packages/",
-      "outputPath": "/home/gabriel/Desktop/DevLinks.Api/src/Api.Service/obj/",
+      "outputPath": "/home/gabriel/Desktop/Devlinks.Api/src/Api.Service/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/home/gabriel/.nuget/NuGet/NuGet.Config"
@@ -1095,8 +1095,8 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "/home/gabriel/Desktop/DevLinks.Api/src/Api.Domain/Domain.csproj": {
-              "projectPath": "/home/gabriel/Desktop/DevLinks.Api/src/Api.Domain/Domain.csproj"
+            "/home/gabriel/Desktop/Devlinks.Api/src/Api.Domain/Domain.csproj": {
+              "projectPath": "/home/gabriel/Desktop/Devlinks.Api/src/Api.Domain/Domain.csproj"
             }
           }
         }

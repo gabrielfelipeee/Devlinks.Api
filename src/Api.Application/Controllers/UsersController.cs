@@ -17,8 +17,8 @@ namespace Api.Application.Controllers
             _userService = userService;
         }
 
-        [Authorize(Policy = "Bearer")]
-        [Authorize(Policy = "AdminPolicy")]
+        //  [Authorize(Policy = "Bearer")]
+        //    [Authorize(Policy = "AdminPolicy")]
         [HttpGet]
         public async Task<ActionResult> GetAllUsers()
         {
@@ -34,18 +34,36 @@ namespace Api.Application.Controllers
             }
         }
 
+        //[Authorize(Policy = "AdminPolicy")]
         [Authorize(Policy = "Bearer")]
         [HttpGet("{id}", Name = "GetUserById")]
+
         public async Task<ActionResult> GetUserById(Guid id)
         {
             if (!ModelState.IsValid) return BadRequest();
             try
             {
-                if (GetIdUserAuthenticated() == null || GetIdUserAuthenticated() != id)
+                var result = await _userService.GetByIdAsync(id);
+                return Ok(result);
+            }
+            catch (ArgumentException e)
+            {
+                return StatusCode((int)HttpStatusCode.BadRequest, e.Message);
+            }
+        }
+
+
+        [HttpGet("authenticated")]
+        public async Task<ActionResult> GetUserAuthenticated()
+        {
+            if (!ModelState.IsValid) return BadRequest();
+            try
+            {
+                if (GetIdUserAuthenticated() == null)
                 {
                     return Forbid();
                 }
-                var result = await _userService.GetByIdAsync(id);
+                var result = await _userService.GetByIdAsync(GetIdUserAuthenticated().Value);
                 return Ok(result);
             }
             catch (ArgumentException e)

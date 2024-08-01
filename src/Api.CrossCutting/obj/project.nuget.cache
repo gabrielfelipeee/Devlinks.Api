@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "nKE5jwDi8mfCXIcG8PvIVosj7fJEBhMn1CpBExkAWqbTG2UHh8sgIQNikqGjqvGO286uXPFFcYjvmNZu/p2d5A==",
+  "dgSpecHash": "m8W/ErEVu6Y8XQNGxhgxwq5P7N/GynjY4gEmMnhkOaAVagToPP6NvzXFLJhcTxtw6mVT9zmhBruNVEl8EV//bA==",
   "success": true,
-  "projectFilePath": "/home/gabriel/Desktop/DevLinks.Api/src/Api.CrossCutting/CrossCutting.csproj",
+  "projectFilePath": "/home/gabriel/Desktop/Devlinks.Api/src/Api.CrossCutting/CrossCutting.csproj",
   "expectedPackageFiles": [
     "/home/gabriel/.nuget/packages/automapper/8.0.0/automapper.8.0.0.nupkg.sha512",
     "/home/gabriel/.nuget/packages/bcrypt.net-next/4.0.3/bcrypt.net-next.4.0.3.nupkg.sha512",

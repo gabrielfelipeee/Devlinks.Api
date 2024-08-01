@@ -1,5 +1,4 @@
 using System.Security.Claims;
-using System.Text;
 using Api.CrossCutting.DependencyInjection;
 using Api.CrossCutting.Mappings;
 using Api.Domain.Security;
@@ -115,7 +114,16 @@ namespace Application
                    }
                 });
             });
-
+            // Cors 
+            builder.Services.AddCors(options =>
+            {
+                options.AddPolicy("localhost",
+                    policy => policy
+                        .WithOrigins("*")
+                        .AllowAnyHeader()
+                        .AllowAnyMethod()
+                        );
+            });
             var app = builder.Build();
 
             if (app.Environment.IsDevelopment())
@@ -127,6 +135,7 @@ namespace Application
             app.UseAuthorization();
 
             app.MapControllers();
+            app.UseCors("localhost");
 
             app.Run();
         }

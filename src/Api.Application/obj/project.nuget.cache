@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "Is8ZHewVYUm+sHuAukWm/O5w0zvx4CTFUz0FNKN4O7nunMDUajFmKvRbaOY+23wn9QDxiVRERdkXYfWSTmdD9g==",
+  "dgSpecHash": "Wm7kI2DyHkwkqAjNPyhHwY6+n1rX1l7Ogq8m30XL8igw+Jr2nfmBe+inT3RgY3rndyUM4VlWfg5D4Ybcu3LyWw==",
   "success": true,
-  "projectFilePath": "/home/gabriel/Desktop/DevLinks.Api/src/Api.Application/Application.csproj",
+  "projectFilePath": "/home/gabriel/Desktop/Devlinks.Api/src/Api.Application/Application.csproj",
   "expectedPackageFiles": [
     "/home/gabriel/.nuget/packages/automapper/8.0.0/automapper.8.0.0.nupkg.sha512",
     "/home/gabriel/.nuget/packages/bcrypt.net-next/4.0.3/bcrypt.net-next.4.0.3.nupkg.sha512",

@@ -26,3 +26,4 @@
 /home/gabriel/Desktop/DevLinks.Api/src/Api.Data/obj/Debug/net8.0/Data.csproj.AssemblyReference.cache
 /home/gabriel/Desktop/DevLinks.Api/src/Api.Data/obj/Debug/net8.0/Data.csproj.CopyComplete
 /home/gabriel/Desktop/DevLinks.Api/src/Api.Data/obj/Debug/net8.0/Data.genruntimeconfig.cache
+/home/gabriel/Desktop/Devlinks.Api/src/Api.Data/obj/Debug/net8.0/Data.sourcelink.json

@@ -21,3 +21,4 @@
 /home/gabriel/Desktop/DevLinks.Api/src/Api.Domain/obj/Debug/net8.0/Domain.pdb
 /home/gabriel/Desktop/DevLinks.Api/src/Api.Domain/obj/Debug/net8.0/ref/Domain.dll
 /home/gabriel/Desktop/DevLinks.Api/src/Api.Domain/obj/Debug/net8.0/Domain.csproj.AssemblyReference.cache
+/home/gabriel/Desktop/Devlinks.Api/src/Api.Domain/obj/Debug/net8.0/Domain.sourcelink.json

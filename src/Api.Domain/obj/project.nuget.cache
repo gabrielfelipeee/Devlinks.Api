@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "mwe/OLaDnGUOp/OuvW4DJXES4E2DdR+FG69eowv8FLntsLz6mi6PbILCKOWIeesdttrVlTacuvuB11MTufGBDw==",
+  "dgSpecHash": "uBiAvldUv2CCh1ab5xuPHRgXget7xriwrOmtUfbxu3Q/ycyeuemrY4msTImn2lb2oO9CVz9LHRzFwqy5NZPs4A==",
   "success": true,
-  "projectFilePath": "/home/gabriel/Desktop/DevLinks.Api/src/Api.Domain/Domain.csproj",
+  "projectFilePath": "/home/gabriel/Desktop/Devlinks.Api/src/Api.Domain/Domain.csproj",
   "expectedPackageFiles": [
     "/home/gabriel/.nuget/packages/microsoft.identitymodel.abstractions/8.0.0/microsoft.identitymodel.abstractions.8.0.0.nupkg.sha512",
     "/home/gabriel/.nuget/packages/microsoft.identitymodel.jsonwebtokens/8.0.0/microsoft.identitymodel.jsonwebtokens.8.0.0.nupkg.sha512",

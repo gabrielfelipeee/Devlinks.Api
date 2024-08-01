@@ -87,3 +87,4 @@
 /home/gabriel/Desktop/DevLinks.Api/src/Api.Application/bin/Debug/net8.0/Microsoft.IdentityModel.Tokens.dll
 /home/gabriel/Desktop/DevLinks.Api/src/Api.Application/bin/Debug/net8.0/System.IdentityModel.Tokens.Jwt.dll
 /home/gabriel/Desktop/DevLinks.Api/src/Api.Application/bin/Debug/net8.0/BCrypt.Net-Next.dll
+/home/gabriel/Desktop/Devlinks.Api/src/Api.Application/obj/Debug/net8.0/Application.sourcelink.json

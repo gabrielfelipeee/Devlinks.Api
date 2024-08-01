@@ -210,11 +210,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/home/gabriel/Desktop/DevLinks.Api/src/Api.Domain/Domain.csproj",
+      "projectUniqueName": "/home/gabriel/Desktop/Devlinks.Api/src/Api.Domain/Domain.csproj",
       "projectName": "Domain",
-      "projectPath": "/home/gabriel/Desktop/DevLinks.Api/src/Api.Domain/Domain.csproj",
+      "projectPath": "/home/gabriel/Desktop/Devlinks.Api/src/Api.Domain/Domain.csproj",
       "packagesPath": "/home/gabriel/.nuget/packages/",
-      "outputPath": "/home/gabriel/Desktop/DevLinks.Api/src/Api.Domain/obj/",
+      "outputPath": "/home/gabriel/Desktop/Devlinks.Api/src/Api.Domain/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/home/gabriel/.nuget/NuGet/NuGet.Config"

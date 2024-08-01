@@ -24,3 +24,4 @@
 /home/gabriel/Desktop/DevLinks.Api/src/Api.Service/bin/Debug/net8.0/Domain.dll
 /home/gabriel/Desktop/DevLinks.Api/src/Api.Service/bin/Debug/net8.0/Domain.pdb
 /home/gabriel/Desktop/DevLinks.Api/src/Api.Service/obj/Debug/net8.0/Service.csproj.CopyComplete
+/home/gabriel/Desktop/Devlinks.Api/src/Api.Service/obj/Debug/net8.0/Service.sourcelink.json

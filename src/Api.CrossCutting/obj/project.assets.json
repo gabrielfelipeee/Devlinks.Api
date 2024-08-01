@@ -1819,11 +1819,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/home/gabriel/Desktop/DevLinks.Api/src/Api.CrossCutting/CrossCutting.csproj",
+      "projectUniqueName": "/home/gabriel/Desktop/Devlinks.Api/src/Api.CrossCutting/CrossCutting.csproj",
       "projectName": "CrossCutting",
-      "projectPath": "/home/gabriel/Desktop/DevLinks.Api/src/Api.CrossCutting/CrossCutting.csproj",
+      "projectPath": "/home/gabriel/Desktop/Devlinks.Api/src/Api.CrossCutting/CrossCutting.csproj",
       "packagesPath": "/home/gabriel/.nuget/packages/",
-      "outputPath": "/home/gabriel/Desktop/DevLinks.Api/src/Api.CrossCutting/obj/",
+      "outputPath": "/home/gabriel/Desktop/Devlinks.Api/src/Api.CrossCutting/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/home/gabriel/.nuget/NuGet/NuGet.Config"
@@ -1838,14 +1838,14 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "/home/gabriel/Desktop/DevLinks.Api/src/Api.Data/Data.csproj": {
-              "projectPath": "/home/gabriel/Desktop/DevLinks.Api/src/Api.Data/Data.csproj"
+            "/home/gabriel/Desktop/Devlinks.Api/src/Api.Data/Data.csproj": {
+              "projectPath": "/home/gabriel/Desktop/Devlinks.Api/src/Api.Data/Data.csproj"
             },
-            "/home/gabriel/Desktop/DevLinks.Api/src/Api.Domain/Domain.csproj": {
-              "projectPath": "/home/gabriel/Desktop/DevLinks.Api/src/Api.Domain/Domain.csproj"
+            "/home/gabriel/Desktop/Devlinks.Api/src/Api.Domain/Domain.csproj": {
+              "projectPath": "/home/gabriel/Desktop/Devlinks.Api/src/Api.Domain/Domain.csproj"
             },
-            "/home/gabriel/Desktop/DevLinks.Api/src/Api.Service/Service.csproj": {
-              "projectPath": "/home/gabriel/Desktop/DevLinks.Api/src/Api.Service/Service.csproj"
+            "/home/gabriel/Desktop/Devlinks.Api/src/Api.Service/Service.csproj": {
+              "projectPath": "/home/gabriel/Desktop/Devlinks.Api/src/Api.Service/Service.csproj"
             }
           }
         }
