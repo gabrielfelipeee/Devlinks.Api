@@ -16,5 +16,6 @@ namespace Api.Domain.Dtos.User
         [MaxLength(60, ErrorMessage = "Email deve ter no máximo {1} caracteres")]
         public string Email { get; set; }
         public string? Avatar { get; set; }
+        public string? Slug { get; set; }
     }
 }

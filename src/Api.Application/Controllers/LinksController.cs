@@ -17,8 +17,8 @@ namespace Api.Application.Controllers
             _linkService = linkService;
         }
 
-      //  [Authorize(Policy = "Bearer")]
-       // [Authorize(Policy = "AdminPolicy")]
+        //  [Authorize(Policy = "Bearer")]
+        // [Authorize(Policy = "AdminPolicy")]
         [HttpGet("all")]
         public async Task<ActionResult> GetAllLinks()
         {
@@ -53,6 +53,7 @@ namespace Api.Application.Controllers
             }
         }
 
+        [Authorize(Policy = "AdminPolicy")]
         [Authorize(Policy = "Bearer")]
         [HttpGet]
         [Route("{id}", Name = "GetLinkById")]

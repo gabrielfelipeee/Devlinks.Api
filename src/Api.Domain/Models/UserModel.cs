@@ -29,6 +29,13 @@ namespace Api.Domain.Models
             get { return _avatar; }
             set { _avatar = value; }
         }
+        private string _slug;
+        public string Slug
+        {
+            get { return _slug; }
+            set { _slug = value; }
+        }
+        
 
         private string _Password;
         public string Password

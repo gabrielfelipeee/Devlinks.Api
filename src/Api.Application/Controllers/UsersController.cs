@@ -17,8 +17,6 @@ namespace Api.Application.Controllers
             _userService = userService;
         }
 
-        //  [Authorize(Policy = "Bearer")]
-        //    [Authorize(Policy = "AdminPolicy")]
         [HttpGet]
         public async Task<ActionResult> GetAllUsers()
         {
@@ -34,7 +32,7 @@ namespace Api.Application.Controllers
             }
         }
 
-        //[Authorize(Policy = "AdminPolicy")]
+        [Authorize(Policy = "AdminPolicy")]
         [Authorize(Policy = "Bearer")]
         [HttpGet("{id}", Name = "GetUserById")]
 
@@ -52,7 +50,7 @@ namespace Api.Application.Controllers
             }
         }
 
-
+        [Authorize(Policy = "Bearer")]
         [HttpGet("authenticated")]
         public async Task<ActionResult> GetUserAuthenticated()
         {

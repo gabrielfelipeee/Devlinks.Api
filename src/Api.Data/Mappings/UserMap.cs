@@ -30,6 +30,11 @@ namespace Api.Data.Mappings
                      builder.Property(x => x.Avatar)
                             .HasColumnName("avatar");
 
+
+                     builder.HasIndex(x => x.Slug).IsUnique();
+                     builder.Property(x => x.Slug)
+                            .HasColumnName("slug");
+
                      builder.Property(x => x.CreatedAt)
                             .HasColumnName("created_at");
 
