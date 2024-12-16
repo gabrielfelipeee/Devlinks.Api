@@ -10,7 +10,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace Data.Migrations
 {
-    [DbContext(typeof(MyContext))]
+    [DbContext(typeof(DevlinksContext))]
     [Migration("20240802141521_AdicionandoOCampoDeSlug")]
     partial class AdicionandoOCampoDeSlug
     {

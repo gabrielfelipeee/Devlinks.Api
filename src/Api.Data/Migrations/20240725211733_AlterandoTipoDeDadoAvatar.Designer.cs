@@ -10,7 +10,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace Data.Migrations
 {
-    [DbContext(typeof(MyContext))]
+    [DbContext(typeof(DevlinksContext))]
     [Migration("20240725211733_AlterandoTipoDeDadoAvatar")]
     partial class AlterandoTipoDeDadoAvatar
     {

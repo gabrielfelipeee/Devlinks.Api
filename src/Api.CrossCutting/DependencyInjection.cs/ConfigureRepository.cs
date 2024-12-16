@@ -10,14 +10,15 @@ namespace Api.CrossCutting.DependencyInjection
 {
     public class ConfigureRepository
     {
-        public static void ConfigureDependenciesRepository(IServiceCollection serviceCollection)
+        public static void ConfigureDependenciesRepository(IServiceCollection services)
         {
-            serviceCollection.AddScoped(typeof(IRepository<>), typeof(BaseRepository<>));
-            serviceCollection.AddScoped<IUserRepository, UserImplementation>();
+            services.AddScoped(typeof(IRepository<>), typeof(BaseRepository<>));
+            services.AddScoped<IUserRepository, UserImplementation>();
+            services.AddScoped<ILinkRepository, LinkImplementation>();
 
             string connectionString = "Server=localhost;Port=3306;Database=devlinks;Uid=root;Pwd=14589632@Gg";
 
-            serviceCollection.AddDbContext<MyContext>(options =>
+            services.AddDbContext<DevlinksContext>(options =>
             {
                 options.UseMySql(connectionString, ServerVersion.AutoDetect(connectionString));
             });

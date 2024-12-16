@@ -8,7 +8,7 @@ namespace Api.Domain.Entities
         public DateTime CreatedAt
         {
             get { return _createdAt; }
-            set { _createdAt = value == null ? DateTime.UtcNow : value; }
+            set { _createdAt = value == default ? DateTime.UtcNow : value; }
         }
     }
 }

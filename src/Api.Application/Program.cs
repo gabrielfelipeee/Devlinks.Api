@@ -1,8 +1,7 @@
 using System.Security.Claims;
+using Api.Application.Middleware;
 using Api.CrossCutting.DependencyInjection;
-using Api.CrossCutting.Mappings;
 using Api.Domain.Security;
-using AutoMapper;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.Extensions.Options;
@@ -16,22 +15,18 @@ namespace Application
         {
             var builder = WebApplication.CreateBuilder(args);
             builder.Services.AddEndpointsApiExplorer();
-            builder.Services.AddControllers();
+            builder.Services.AddControllers().AddNewtonsoftJson(options =>
+           {
+               options.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore;
+
+               options.SerializerSettings.NullValueHandling = Newtonsoft.Json.NullValueHandling.Ignore;
+           });
 
             // Configurções de injeção de dependências
             ConfigureService.ConfigureDependenciesService(builder.Services);
             ConfigureRepository.ConfigureDependenciesRepository(builder.Services);
-
-
-            // AutoMapper configuration
-            var autoMapperConfig = new MapperConfiguration(config =>
-            {
-                config.AddProfile(new DtoToModelProfile());
-                config.AddProfile(new EntityToDtoProfile());
-                config.AddProfile(new ModelToEntityProfile());
-            });
-            IMapper mapper = autoMapperConfig.CreateMapper();
-            builder.Services.AddSingleton(mapper);
+            ConfigureAutoMapper.ConfigureDependenciesAutoMapper(builder.Services);
+            ConfigureFluentValidation.ConfigureDependenciesFluentValidation(builder.Services);
 
 
             // Jwt Configurações
@@ -48,11 +43,10 @@ namespace Application
             builder.Services.AddAuthentication(authOptions =>
             {
                 authOptions.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme; // Jwt como esquema de autenticação padrão
-
                 authOptions.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
-            }).AddJwtBearer(bearerOptios =>
+            }).AddJwtBearer(bearerOptions =>
             {
-                var paramsValidation = bearerOptios.TokenValidationParameters;
+                var paramsValidation = bearerOptions.TokenValidationParameters;
 
                 paramsValidation.IssuerSigningKey = signingConfigurations.Key;
                 paramsValidation.ValidAudience = tokenConfigurations.Audience;
@@ -68,7 +62,7 @@ namespace Application
                 auth.AddPolicy("Bearer", new AuthorizationPolicyBuilder() // Cria uma politica chamada 'Bearer'
                     .AddAuthenticationSchemes(JwtBearerDefaults.AuthenticationScheme) // Especifica o esquema a ser usado, nesse caso o bearer
                     .RequireAuthenticatedUser()
-                    .Build()); // Apenas usuários autenticados podem  fazer 
+                    .Build()); // Apenas usuários autenticados podem fazer 
 
                 auth.AddPolicy("AdminPolicy", new AuthorizationPolicyBuilder()
                     .RequireClaim(ClaimTypes.Role, "Admin")
@@ -136,6 +130,8 @@ namespace Application
 
             app.MapControllers();
             app.UseCors("localhost");
+
+            app.UseMiddleware<ControllerExceptionMiddleware>();
 
             app.Run();
         }

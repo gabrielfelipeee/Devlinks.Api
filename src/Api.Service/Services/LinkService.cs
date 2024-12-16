@@ -1,82 +1,96 @@
 using Api.Domain.Dtos.Link;
 using Api.Domain.Entities;
-using Api.Domain.Interfaces;
 using Api.Domain.Interfaces.Services;
 using Api.Domain.Models;
+using Api.Domain.Repository;
+using Api.Service.Services.BusinessRules;
+using Api.Service.Shared;
 using AutoMapper;
 
 namespace Api.Service.Services
 {
     public class LinkService : ILinkService
     {
-        private readonly IRepository<LinkEntity> _repository;
-
+        private readonly ILinkRepository _linkRepository;
         private readonly IMapper _mapper;
-        public LinkService(IRepository<LinkEntity> repository, IMapper mapper)
+        private readonly LinkBusinessRules _linkBusinessRules;
+        private readonly GetAuthenticatedUserId _getAuthenticatedUserId;
+        private EntityFluentValidationService<LinkDtoCreate, LinkDtoUpdate> _entityFluentValidationService;
+
+        public LinkService(
+            ILinkRepository linkRepository,
+            IMapper mapper,
+            LinkBusinessRules linkBusinessRules,
+            GetAuthenticatedUserId getAuthenticatedUserId,
+            EntityFluentValidationService<LinkDtoCreate, LinkDtoUpdate> entityFluentValidationService)
         {
-            _repository = repository;
+            _linkRepository = linkRepository;
             _mapper = mapper;
+            _linkBusinessRules = linkBusinessRules;
+            _getAuthenticatedUserId = getAuthenticatedUserId;
+            _entityFluentValidationService = entityFluentValidationService;
         }
+
         public async Task<IEnumerable<LinkDto>> GetAllAsync()
         {
-            var links = await _repository.SelectAllAsync();
-            var dto = _mapper.Map<IEnumerable<LinkDto>>(links);
+            var entities = await _linkRepository.SelectAllAsync();
+            var dto = _mapper.Map<IEnumerable<LinkDto>>(entities);
             return dto;
         }
 
-        public async Task<LinkDto> GetByIdAsync(Guid id, Guid userIdAuthenticated)
+        public async Task<LinkDto> GetByIdAsync(Guid id)
         {
-            var link = await _repository.SelectByIdAsync(id);
+            // Verifica se o link pertence ao usuário autenticado
+            await _linkBusinessRules.EnsureLinkBelongsToAuthenticatedUserAsync(id);
 
-            if (userIdAuthenticated != link.UserId) return null;
-
-            var dto = _mapper.Map<LinkDto>(link);
+            var entity = await _linkRepository.SelectByIdAsync(id);
+            var dto = _mapper.Map<LinkDto>(entity);
             return dto;
         }
-
-        public async Task<IEnumerable<LinkDto>> GetByUserAuthenticatedAsync(Guid userIdAuthenticated)
+        public async Task<IEnumerable<LinkDto>> GetByUserAuthenticatedAsync()
         {
-            var result = await _repository.SelectAllAsync();
+            var authenticatedUserId = await _getAuthenticatedUserId.AuthenticatedUserId(); // Id do usuário autenticado
 
-            var linksByUser = result.Where(x => x.UserId == userIdAuthenticated).ToList();
-            if (linksByUser == null) return null;
-
-            var dto = _mapper.Map<IEnumerable<LinkDto>>(linksByUser);
+            var entities = await _linkRepository.SelectByUserAuthenticated(authenticatedUserId);
+            var dto = _mapper.Map<IEnumerable<LinkDto>>(entities);
             return dto;
         }
-        public async Task<LinkDtoCreateResult> PostAsync(LinkDtoCreate link, Guid userIdAuthenticated)
+        public async Task<LinkDtoCreateResult> PostAsync(LinkDtoCreate link)
         {
+            await _entityFluentValidationService.ValidateCreateAsync(link);
+
+            var authenticatedUserId = await _getAuthenticatedUserId.AuthenticatedUserId(); // Id do usuário autenticado
+
             var model = _mapper.Map<LinkModel>(link);
             var entity = _mapper.Map<LinkEntity>(model);
-            entity.UserId = userIdAuthenticated;
+            entity.UserId = authenticatedUserId;
 
-            var result = await _repository.InsertAsync(entity);
-
+            var result = await _linkRepository.InsertAsync(entity);
             var dto = _mapper.Map<LinkDtoCreateResult>(result);
             return dto;
         }
-
-        public async Task<LinkDtoUpdateResult> PutAsync(LinkDtoUpdate link, Guid userIdAuthenticated)
+        public async Task<LinkDtoUpdateResult> PutAsync(LinkDtoUpdate link)
         {
-            var resultEntity = await _repository.SelectByIdAsync(link.Id);
-            if (userIdAuthenticated != resultEntity.UserId) return null;
+            await _entityFluentValidationService.ValidateUpdateAsync(link);
+
+            var authenticatedUserId = await _getAuthenticatedUserId.AuthenticatedUserId(); // Id do usuário autenticado
+
+            // Verifica se o link pertence ao usuário autenticado
+            await _linkBusinessRules.EnsureLinkBelongsToAuthenticatedUserAsync(link.Id);
 
             var model = _mapper.Map<LinkModel>(link);
             var entity = _mapper.Map<LinkEntity>(model);
-            entity.UserId = userIdAuthenticated;
-            
-            var result = await _repository.UpdateAsync(entity);
+            entity.UserId = authenticatedUserId;
+
+            var result = await _linkRepository.UpdateAsync(entity);
             var dto = _mapper.Map<LinkDtoUpdateResult>(result);
             return dto;
         }
-        public async Task<bool> DeleteAsync(Guid id, Guid userIdAuthenticated)
+        public async Task<bool> DeleteAsync(Guid id)
         {
-            var entity = await _repository.SelectByIdAsync(id);
-            if (userIdAuthenticated != entity.UserId)
-            {
-                return false;
-            }
-            return await _repository.DeleteAsync(id);
+            await _linkBusinessRules.EnsureLinkBelongsToAuthenticatedUserAsync(id);
+
+            return await _linkRepository.DeleteAsync(id);
         }
     }
 }

@@ -7,10 +7,10 @@ using Microsoft.EntityFrameworkCore;
 //
 namespace Api.Data.Context
 {
-    public class MyContext : DbContext
+    public class DevlinksContext : DbContext
     {
         // Isso é necessário para para configurar o contexto do db com opções específicas, como a string de conexão
-        public MyContext(DbContextOptions<MyContext> options) : base(options)
+        public DevlinksContext(DbContextOptions<DevlinksContext> options) : base(options)
         {
         }
         public DbSet<UserEntity> Users { get; set; }

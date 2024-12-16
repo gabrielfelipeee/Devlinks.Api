@@ -9,7 +9,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace Data.Migrations
 {
-    [DbContext(typeof(MyContext))]
+    [DbContext(typeof(DevlinksContext))]
     partial class MyContextModelSnapshot : ModelSnapshot
     {
         protected override void BuildModel(ModelBuilder modelBuilder)
@@ -65,7 +65,8 @@ namespace Data.Migrations
                         .HasColumnName("id");
 
                     b.Property<string>("Avatar")
-                        .HasColumnType("longtext")
+                        .HasMaxLength(300)
+                        .HasColumnType("varchar(300)")
                         .HasColumnName("avatar");
 
                     b.Property<DateTime>("CreatedAt")
@@ -74,7 +75,8 @@ namespace Data.Migrations
 
                     b.Property<string>("Email")
                         .IsRequired()
-                        .HasColumnType("varchar(255)")
+                        .HasMaxLength(100)
+                        .HasColumnType("varchar(100)")
                         .HasColumnName("email");
 
                     b.Property<string>("Name")
@@ -90,7 +92,8 @@ namespace Data.Migrations
                         .HasColumnName("password_hash");
 
                     b.Property<string>("Slug")
-                        .HasColumnType("varchar(255)")
+                        .HasMaxLength(50)
+                        .HasColumnType("varchar(50)")
                         .HasColumnName("slug");
 
                     b.Property<DateTime>("UpdatedAt")

@@ -1,10 +1,8 @@
 namespace Api.Domain.Dtos.User
 {
-    public class UserDtoCreateResult
+    public class UserDtoCreateResult : UserBaseDto
     {
         public Guid Id { get; set; }
-        public string Name { get; set; }
-        public string Email { get; set; }
         public DateTime CreatedAt { get; set;}
     }
 }

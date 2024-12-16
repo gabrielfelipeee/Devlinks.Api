@@ -2,10 +2,10 @@ using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Security.Principal;
 using Api.Domain.Dtos;
-using Api.Domain.Entities;
 using Api.Domain.Interfaces.Services;
 using Api.Domain.Repository;
 using Api.Domain.Security;
+using FluentValidation;
 using Microsoft.IdentityModel.Tokens;
 
 namespace Api.Service.Services
@@ -13,13 +13,16 @@ namespace Api.Service.Services
     public class LoginService : ILoginService
     {
         private readonly IUserRepository _userRepository;
+        private readonly IValidator<LoginDto> _loginValidator;
         private SigningConfigurations _signingConfigurations;
         private TokenConfigurations _tokenConfigurations;
         public LoginService(IUserRepository userRepository,
+                            IValidator<LoginDto> loginValidator,
                             SigningConfigurations signingConfigurations,
                             TokenConfigurations tokenConfigurations)
         {
             _userRepository = userRepository;
+            _loginValidator = loginValidator;
             _signingConfigurations = signingConfigurations;
             _tokenConfigurations = tokenConfigurations;
         }
@@ -27,46 +30,42 @@ namespace Api.Service.Services
 
         public async Task<object> FindUserByLogin(LoginDto user)
         {
-            try
+            var validationResult = await _loginValidator.ValidateAsync(user);
+            if (!validationResult.IsValid)
             {
-                var baseUser = new UserEntity();
-                if (user != null && !string.IsNullOrEmpty(user.Email))
+                throw new ValidationException(validationResult.Errors);
+            }
+            else
+            {
+                var baseUser = await _userRepository.SelectByEmailAsync(user.Email);
+                if (baseUser != null)
                 {
-                    baseUser = await _userRepository.SelectByLoginAsync(user.Email);
-                    if (baseUser != null)
+                    bool isPasswordHashValid = BCrypt.Net.BCrypt.Verify(user.Password, baseUser.Password);
+                    if (isPasswordHashValid)
                     {
-                        bool isPasswordHashValid = BCrypt.Net.BCrypt.Verify(user.Password, baseUser.Password);
-                        if (isPasswordHashValid)
-                        {
-                            var identity = new ClaimsIdentity(
-                                new GenericIdentity(user.Email),
-                                new[]
-                                {
+                        var identity = new ClaimsIdentity(
+                            new GenericIdentity(user.Email),
+                            new[]
+                            {
                                 new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString()),
                                 new Claim(JwtRegisteredClaimNames.UniqueName, user.Email),
                                 new Claim(ClaimTypes.NameIdentifier, baseUser.Id.ToString())
-                                });
-                            DateTime createDate = DateTime.UtcNow;
-                            DateTime expirationDate = createDate + TimeSpan.FromSeconds(_tokenConfigurations.Seconds);
+                            });
+                        DateTime createDate = DateTime.UtcNow;
+                        DateTime expirationDate = createDate + TimeSpan.FromSeconds(_tokenConfigurations.Seconds);
 
-                            var handler = new JwtSecurityTokenHandler(); // Oferece os metodos para criar o token
-                            string token = CreateToken(identity, createDate, expirationDate, handler);
-                            return SuccessObject(createDate, expirationDate, token, user);
-                        }
+                        var handler = new JwtSecurityTokenHandler(); // Oferece os metodos para criar o token
+                        string token = CreateToken(identity, createDate, expirationDate, handler);
+                        return SuccessObject(createDate, expirationDate, token, user);
                     }
                 }
-                return new
-                {
-                    authenticated = false,
-                    message = "Falha ao autenticar"
-                };
             }
-            catch (Exception ex)
+            return new
             {
-                throw ex;
-            }
+                authenticated = false,
+                message = "Email ou senha inválidos."
+            };
         }
-
         private string CreateToken(ClaimsIdentity identity,
                                    DateTime createDate,
                                    DateTime expirationDate,
@@ -84,7 +83,6 @@ namespace Api.Service.Services
             var token = handler.WriteToken(securityToken);
             return token;
         }
-
         private object SuccessObject(DateTime createDate,
                                      DateTime expirationDate,
                                      string token,
