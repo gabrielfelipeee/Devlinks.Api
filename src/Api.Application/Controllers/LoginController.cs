@@ -20,6 +20,9 @@ namespace Api.Application.Controllers
         public async Task<IActionResult> Login(LoginDto user)
         {
             var result = await _loginService.FindUserByLogin(user);
+            if (result != null && !result.Authenticated)
+                return Unauthorized(result);
+
             return Ok(result);
         }
     }

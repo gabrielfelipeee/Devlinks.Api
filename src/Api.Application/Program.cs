@@ -113,10 +113,10 @@ namespace Application
             {
                 options.AddPolicy("localhost",
                     policy => policy
-                        .WithOrigins("*")
+                        .WithOrigins("http://localhost:5173") // Substitua pelo URL correto da sua aplicação cliente
                         .AllowAnyHeader()
                         .AllowAnyMethod()
-                        );
+                        .AllowCredentials());
             });
             var app = builder.Build();
 
@@ -125,11 +125,12 @@ namespace Application
                 app.UseSwagger();
                 app.UseSwaggerUI();
             }
+             app.UseCors("localhost");
             app.UseAuthentication();
             app.UseAuthorization();
 
             app.MapControllers();
-            app.UseCors("localhost");
+           
 
             app.UseMiddleware<ControllerExceptionMiddleware>();
 

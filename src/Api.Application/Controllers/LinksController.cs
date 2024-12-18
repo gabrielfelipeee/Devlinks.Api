@@ -15,7 +15,7 @@ namespace Api.Application.Controllers
             _linkService = linkService;
         }
 
-        [HttpGet("all")]
+        [HttpGet]
         public async Task<ActionResult> GetAllLinks()
         {
             var result = await _linkService.GetAllAsync();

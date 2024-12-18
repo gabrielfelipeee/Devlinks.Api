@@ -28,7 +28,7 @@ namespace Api.Service.Services
         }
 
 
-        public async Task<object> FindUserByLogin(LoginDto user)
+        public async Task<LoginResponseDto> FindUserByLogin(LoginDto user)
         {
             var validationResult = await _loginValidator.ValidateAsync(user);
             if (!validationResult.IsValid)
@@ -56,14 +56,22 @@ namespace Api.Service.Services
 
                         var handler = new JwtSecurityTokenHandler(); // Oferece os metodos para criar o token
                         string token = CreateToken(identity, createDate, expirationDate, handler);
-                        return SuccessObject(createDate, expirationDate, token, user);
+                        return new LoginResponseDto
+                        {
+                            Authenticated = true,
+                            Created = createDate.ToString("yyyy-MM-dd HH:mm:ss"),
+                            Expiration = expirationDate.ToString("yyyy-MM-dd HH:mm:ss"),
+                            AcessToken = token,
+                            UserName = user.Email,
+                            Message = "Usuário logado com sucesso"
+                        };
                     }
                 }
             }
-            return new
+            return new LoginResponseDto
             {
-                authenticated = false,
-                message = "Email ou senha inválidos."
+                Authenticated = false,
+                Message = "Email ou senha inválidos."
             };
         }
         private string CreateToken(ClaimsIdentity identity,
@@ -82,21 +90,6 @@ namespace Api.Service.Services
             });
             var token = handler.WriteToken(securityToken);
             return token;
-        }
-        private object SuccessObject(DateTime createDate,
-                                     DateTime expirationDate,
-                                     string token,
-                                     LoginDto user)
-        {
-            return new
-            {
-                authenticated = true,
-                created = createDate.ToString("yyyy-MM-dd HH:mm:ss"),
-                expiration = expirationDate.ToString("yyyy-MM-dd HH:mm:ss"),
-                acessToken = token,
-                userName = user.Email,
-                message = "Usuário logado com sucesso"
-            };
         }
     }
 }
