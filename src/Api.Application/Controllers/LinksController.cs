@@ -15,6 +15,7 @@ namespace Api.Application.Controllers
             _linkService = linkService;
         }
 
+        [Authorize(Policy = "Admin")]
         [HttpGet]
         public async Task<ActionResult> GetAllLinks()
         {
@@ -22,20 +23,27 @@ namespace Api.Application.Controllers
             return Ok(result);
         }
 
+        [Authorize(Policy = "Admin")]
+        [HttpGet("{id}")]
+        public async Task<ActionResult> GetLinkById(Guid id)
+        {
+            var result = await _linkService.GetByIdAsync(id);
+            return Ok(result);
+        }
+
         [Authorize(Policy = "Bearer")]
-        [HttpGet("authenticated")]
+        [HttpGet("user/authenticated")]
         public async Task<ActionResult> GetByUserAuthenticated()
         {
             var result = await _linkService.GetByUserAuthenticatedAsync();
             return Ok(result);
         }
 
-        // [Authorize(Policy = "AdminPolicy")]
-        [Authorize(Policy = "Bearer")]
-        [HttpGet("{id}", Name = "GetLinkById")]
-        public async Task<ActionResult> GetLinkById(Guid id)
+        [AllowAnonymous]
+         [HttpGet("user/{userId}")]
+        public async Task<ActionResult> GetByUserId(Guid userId)
         {
-            var result = await _linkService.GetByIdAsync(id);
+            var result = await _linkService.GetByUserIdAsync(userId);
             return Ok(result);
         }
 

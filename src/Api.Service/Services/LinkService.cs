@@ -40,11 +40,15 @@ namespace Api.Service.Services
 
         public async Task<LinkDto> GetByIdAsync(Guid id)
         {
-            // Verifica se o link pertence ao usuário autenticado
-            await _linkBusinessRules.EnsureLinkBelongsToAuthenticatedUserAsync(id);
-
             var entity = await _linkRepository.SelectByIdAsync(id);
             var dto = _mapper.Map<LinkDto>(entity);
+            return dto;
+        }
+
+        public async Task<IEnumerable<LinkDto>> GetByUserIdAsync(Guid userId)
+        {
+            var entities = await _linkRepository.SelectByUserIdAsync(userId);
+            var dto = _mapper.Map<IEnumerable<LinkDto>>(entities);
             return dto;
         }
         public async Task<IEnumerable<LinkDto>> GetByUserAuthenticatedAsync()

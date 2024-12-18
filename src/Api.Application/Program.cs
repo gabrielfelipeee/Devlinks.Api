@@ -64,7 +64,7 @@ namespace Application
                     .RequireAuthenticatedUser()
                     .Build()); // Apenas usuários autenticados podem fazer 
 
-                auth.AddPolicy("AdminPolicy", new AuthorizationPolicyBuilder()
+                auth.AddPolicy("Admin", new AuthorizationPolicyBuilder()
                     .RequireClaim(ClaimTypes.Role, "Admin")
                     .Build());
             });

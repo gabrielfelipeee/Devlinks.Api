@@ -6,5 +6,6 @@ namespace Api.Domain.Repository
     public interface ILinkRepository : IRepository<LinkEntity>
     {
         Task<IEnumerable<LinkEntity>> SelectByUserAuthenticated(Guid idUserAuthenticated);
+        Task<IEnumerable<LinkEntity>> SelectByUserIdAsync(Guid userId);
     }
 }

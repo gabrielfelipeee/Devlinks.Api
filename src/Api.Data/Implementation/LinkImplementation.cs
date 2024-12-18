@@ -21,5 +21,12 @@ namespace Api.Data.Implementation
                         .Where(x => x.UserId == idUserAuthenticated)
                         .ToListAsync();
         }
+        public async Task<IEnumerable<LinkEntity>> SelectByUserIdAsync(Guid userId)
+        {
+            return await _dataset
+                        .AsNoTracking() 
+                        .Where(x => x.UserId == userId)
+                        .ToListAsync();
+        }
     }
 }

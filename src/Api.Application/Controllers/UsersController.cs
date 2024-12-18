@@ -15,6 +15,7 @@ namespace Api.Application.Controllers
             _userService = userService;
         }
 
+        [Authorize(Policy = "Admin")]
         [HttpGet]
         public async Task<ActionResult> GetAllUsers()
         {
@@ -22,8 +23,7 @@ namespace Api.Application.Controllers
             return Ok(result);
         }
 
-        [Authorize(Policy = "AdminPolicy")]
-        [Authorize(Policy = "Bearer")]
+        [AllowAnonymous]
         [HttpGet("{id}")]
         public async Task<ActionResult> GetUserById(Guid id)
         {
@@ -38,7 +38,8 @@ namespace Api.Application.Controllers
             var result = await _userService.GetAuthenticatedUserAsync();
             return Ok(result);
         }
-
+        
+        [AllowAnonymous]
         [HttpPost]
         public async Task<ActionResult> PostUser(UserDtoCreate user)
         {
