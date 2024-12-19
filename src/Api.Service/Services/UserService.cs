@@ -45,6 +45,14 @@ namespace Api.Service.Services
             var dto = _mapper.Map<UserDto>(entity);
             return dto;
         }
+        public async Task<UserDto> GetBySlugAsync(string slug)
+        {
+            var entity = await _userRepository.SelectBySlugAsync(slug)
+                    ?? throw new NotFoundException("Usuário não encontrado.");
+                    
+            var dto = _mapper.Map<UserDto>(entity);
+            return dto;
+        }
         public async Task<UserDto> GetAuthenticatedUserAsync()
         {
             // Id do usuário autenticado

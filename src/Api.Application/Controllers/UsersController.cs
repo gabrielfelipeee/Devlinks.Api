@@ -24,10 +24,18 @@ namespace Api.Application.Controllers
         }
 
         [AllowAnonymous]
-        [HttpGet("{id}")]
+        [HttpGet("by-id/{id}")]
         public async Task<ActionResult> GetUserById(Guid id)
         {
             var result = await _userService.GetByIdAsync(id);
+            return Ok(result);
+        }
+
+        [AllowAnonymous]
+        [HttpGet("by-slug/{slug}")]
+        public async Task<ActionResult> GetBySlugAsync(string slug)
+        {
+            var result = await _userService.GetBySlugAsync(slug);
             return Ok(result);
         }
 
@@ -38,7 +46,7 @@ namespace Api.Application.Controllers
             var result = await _userService.GetAuthenticatedUserAsync();
             return Ok(result);
         }
-        
+
         [AllowAnonymous]
         [HttpPost]
         public async Task<ActionResult> PostUser(UserDtoCreate user)

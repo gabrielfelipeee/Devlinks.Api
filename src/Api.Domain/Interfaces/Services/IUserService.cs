@@ -6,6 +6,7 @@ namespace Api.Domain.Interfaces.Services
     {
         Task<IEnumerable<UserDto>> GetAllAsync();
         Task<UserDto> GetByIdAsync(Guid id);
+        Task<UserDto> GetBySlugAsync(string slug);
         Task<UserDto> GetAuthenticatedUserAsync();
         Task<UserDtoCreateResult> PostAsync(UserDtoCreate user);
         Task<UserDtoUpdateResult> PutAsync(UserDtoUpdate user);
