@@ -9,7 +9,7 @@ namespace Api.Domain.Interfaces.Services
         Task<IEnumerable<LinkDto>> GetByUserIdAsync(Guid userId);
         Task<IEnumerable<LinkDto>> GetByUserAuthenticatedAsync();
         Task<LinkDtoCreateResult> PostAsync(LinkDtoCreate linkDto);
-        Task<LinkDtoUpdateResult> PutAsync(LinkDtoUpdate linkDto);
+        Task<LinkDtoUpdateResult> PutAsync(Guid id, LinkDtoUpdate linkDto);
         Task<bool> DeleteAsync(Guid id);
     }
 }

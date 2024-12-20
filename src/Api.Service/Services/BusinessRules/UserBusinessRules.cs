@@ -31,9 +31,9 @@ namespace Api.Service.Services.BusinessRules
                 throw new ConflictException("O email informado já está registrado no sistema.");
         }
 
-        public async Task ValidateUserUpdateAsync(UserDtoUpdate userDto)
+        public async Task ValidateUserUpdateAsync(Guid id, UserDtoUpdate userDto)
         {
-            var user = await EnsureUserExistsAsync(userDto.Id);
+            var user = await EnsureUserExistsAsync(id);
 
             // Id do usuário autenticado
             var authenticatedUserId = await _getAuthenticatedUserId.AuthenticatedUserId();
@@ -44,8 +44,7 @@ namespace Api.Service.Services.BusinessRules
             if (await _userRepository.SelectByEmailAsync(userDto.Email) != null && user.Email != userDto.Email)
                 throw new ConflictException("O email informado já está registrado no sistema.");
 
-            var userSlug = await _userRepository.SelectBySlugAsync(userDto.Slug);
-            if(userSlug != null && userSlug.Id != authenticatedUserId)
+            if (await _userRepository.SelectBySlugAsync(userDto.Slug) != null && user.Slug != userDto.Slug)
                 throw new ConflictException("O slug informado já está em uso por outro usuário.");
         }
 

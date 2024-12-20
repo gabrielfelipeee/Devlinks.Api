@@ -7,7 +7,7 @@ namespace Api.Domain.Interfaces
         Task<IEnumerable<T>> SelectAllAsync();
         Task<T> SelectByIdAsync(Guid id);
         Task<T> InsertAsync(T item);
-        Task<T> UpdateAsync(T item);
+        Task<T> UpdateAsync(Guid id, T item);
         Task<bool> DeleteAsync(Guid id);
     }
 }

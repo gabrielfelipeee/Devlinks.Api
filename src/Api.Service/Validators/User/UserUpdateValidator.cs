@@ -7,8 +7,6 @@ namespace Api.Service.Validators.User
     {
         public UserUpdateValidator()
         {
-            RuleFor(u => u.Id)
-                .NotEmpty().WithMessage("O ID do paciente deve ser maior que 0.");
             RuleFor(u => u.Slug)
                 .NotEmpty().WithMessage("O Slug é obrigatório.")
                 .MinimumLength(3).WithMessage("O Slug deve ter pelo menos 3 caracteres.")

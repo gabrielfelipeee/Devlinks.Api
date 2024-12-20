@@ -73,20 +73,20 @@ namespace Api.Service.Services
             var dto = _mapper.Map<LinkDtoCreateResult>(result);
             return dto;
         }
-        public async Task<LinkDtoUpdateResult> PutAsync(LinkDtoUpdate link)
+        public async Task<LinkDtoUpdateResult> PutAsync(Guid id, LinkDtoUpdate link)
         {
             await _entityFluentValidationService.ValidateUpdateAsync(link);
 
             var authenticatedUserId = await _getAuthenticatedUserId.AuthenticatedUserId(); // Id do usuário autenticado
 
             // Verifica se o link pertence ao usuário autenticado
-            await _linkBusinessRules.EnsureLinkBelongsToAuthenticatedUserAsync(link.Id);
+            await _linkBusinessRules.EnsureLinkBelongsToAuthenticatedUserAsync(id);
 
             var model = _mapper.Map<LinkModel>(link);
             var entity = _mapper.Map<LinkEntity>(model);
             entity.UserId = authenticatedUserId;
 
-            var result = await _linkRepository.UpdateAsync(entity);
+            var result = await _linkRepository.UpdateAsync(id, entity);
             var dto = _mapper.Map<LinkDtoUpdateResult>(result);
             return dto;
         }

@@ -56,10 +56,10 @@ namespace Api.Application.Controllers
         }
 
         [Authorize(Policy = "Bearer")]
-        [HttpPut]
-        public async Task<ActionResult> PutUser(UserDtoUpdate user)
+        [HttpPut("{id}")]
+        public async Task<ActionResult> PutUser(Guid id, UserDtoUpdate user)
         {
-            var result = await _userService.PutAsync(user);
+            var result = await _userService.PutAsync(id, user);
             return Ok(result);
         }
 

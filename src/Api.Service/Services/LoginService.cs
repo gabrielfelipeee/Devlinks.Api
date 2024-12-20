@@ -71,7 +71,7 @@ namespace Api.Service.Services
             return new LoginResponseDto
             {
                 Authenticated = false,
-                Message = "Email ou senha inválidos."
+                Message = "Falha ao tentar fazer login. Verifique suas credenciais e tente novamente!"
             };
         }
         private string CreateToken(ClaimsIdentity identity,

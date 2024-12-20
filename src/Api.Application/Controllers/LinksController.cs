@@ -40,7 +40,7 @@ namespace Api.Application.Controllers
         }
 
         [AllowAnonymous]
-         [HttpGet("user/{userId}")]
+        [HttpGet("user/{userId}")]
         public async Task<ActionResult> GetByUserId(Guid userId)
         {
             var result = await _linkService.GetByUserIdAsync(userId);
@@ -56,10 +56,10 @@ namespace Api.Application.Controllers
         }
 
         [Authorize(Policy = "Bearer")]
-        [HttpPut]
-        public async Task<ActionResult> PutLink(LinkDtoUpdate link)
+        [HttpPut("{id}")]
+        public async Task<ActionResult> PutLink(Guid id, LinkDtoUpdate link)
         {
-            var result = await _linkService.PutAsync(link);
+            var result = await _linkService.PutAsync(id, link);
             return Ok(result);
         }
 

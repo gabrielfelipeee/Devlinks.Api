@@ -49,7 +49,7 @@ namespace Api.Service.Services
         {
             var entity = await _userRepository.SelectBySlugAsync(slug)
                     ?? throw new NotFoundException("Usuário não encontrado.");
-                    
+
             var dto = _mapper.Map<UserDto>(entity);
             return dto;
         }
@@ -79,16 +79,16 @@ namespace Api.Service.Services
             return dto;
         }
 
-        public async Task<UserDtoUpdateResult> PutAsync(UserDtoUpdate user)
+        public async Task<UserDtoUpdateResult> PutAsync(Guid id, UserDtoUpdate user)
         {
             await _entityFluentValidationService.ValidateUpdateAsync(user);
 
-            await _userBusinessRules.ValidateUserUpdateAsync(user);
+            await _userBusinessRules.ValidateUserUpdateAsync(id, user);
 
             var model = _mapper.Map<UserModel>(user);
             var entity = _mapper.Map<UserEntity>(model);
 
-            var result = await _userRepository.UpdateAsync(entity);
+            var result = await _userRepository.UpdateAsync(id, entity);
             var dto = _mapper.Map<UserDtoUpdateResult>(result);
             return dto;
         }

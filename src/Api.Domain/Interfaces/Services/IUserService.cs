@@ -9,7 +9,7 @@ namespace Api.Domain.Interfaces.Services
         Task<UserDto> GetBySlugAsync(string slug);
         Task<UserDto> GetAuthenticatedUserAsync();
         Task<UserDtoCreateResult> PostAsync(UserDtoCreate user);
-        Task<UserDtoUpdateResult> PutAsync(UserDtoUpdate user);
+        Task<UserDtoUpdateResult> PutAsync(Guid id, UserDtoUpdate user);
         Task<bool> DeleteAsync(Guid id);
     }
 }

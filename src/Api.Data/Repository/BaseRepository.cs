@@ -28,7 +28,6 @@ namespace Api.Data.Repository
             if (item.Id == Guid.Empty)
                 item.Id = new Guid();
 
-
             item.CreatedAt = DateTime.UtcNow;
 
             await _dataset.AddAsync(item);
@@ -36,21 +35,19 @@ namespace Api.Data.Repository
             return item;
 
         }
-        public async Task<T> UpdateAsync(T item)
+        public async Task<T> UpdateAsync(Guid id, T item)
         {
-            var result = await _dataset.FirstOrDefaultAsync(x => x.Id == item.Id);
+            var result = await _dataset.FirstOrDefaultAsync(x => x.Id == id);
             if (result == null)
                 return null;
 
-            // Preservando a senha original
+            // Preservando a senha original (se for um UserEntity)
             if (result is UserEntity userResult && item is UserEntity userItem)
                 userItem.Password = userResult.Password;
-
 
             item.Id = result.Id;
             item.CreatedAt = item.CreatedAt;
             item.UpdatedAt = DateTime.UtcNow;
-
             _myContext.Entry(result).CurrentValues.SetValues(item);
             await _myContext.SaveChangesAsync();
             return item;
