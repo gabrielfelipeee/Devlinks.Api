@@ -42,21 +42,21 @@ namespace Api.Application.Middleware
                     case ForbiddenAccessException:
                         statusCode = HttpStatusCode.Forbidden;
                         title = "Acesso negado.";
-                        detail = !isDevelopment
+                        detail = isDevelopment
                             ? ex.StackTrace ?? ex.Message
                             : ex.Message;
                         break;
                     case NotFoundException:
                         statusCode = HttpStatusCode.NotFound;
                         title = "Recurso não encontrado.";
-                        detail = !isDevelopment
+                        detail = isDevelopment
                             ? ex.StackTrace ?? ex.Message
                             : ex.Message;
                         break;
                     case ValidationException validationException:
                         statusCode = HttpStatusCode.BadRequest;
                         title = "Erro de validação.";
-                        detail = !isDevelopment
+                        detail = isDevelopment
                             ? ex.StackTrace ?? ex.Message
                             : "Um ou mais erros de validação ocorreram.";
 
@@ -70,21 +70,21 @@ namespace Api.Application.Middleware
                     case ConflictException:
                         statusCode = HttpStatusCode.Conflict;
                         title = "Conflito de dados.";
-                        detail = !isDevelopment
+                        detail = isDevelopment
                             ? ex.StackTrace ?? ex.Message
                             : ex.Message;
                         break;
                     case ArgumentException:
                         statusCode = HttpStatusCode.BadRequest;
                         title = "Argumento inválido.";
-                        detail = !isDevelopment
+                        detail = isDevelopment
                             ? ex.StackTrace ?? ex.Message
                             : ex.Message;
                         break;
                     default:
                         statusCode = HttpStatusCode.InternalServerError;
                         title = "Erro interno do servidor.";
-                        detail = !isDevelopment
+                        detail = isDevelopment
                             ? ex.StackTrace ?? ex.Message
                             : ex.Message; // "Ocorreu um erro inesperado. Tente novamente mais tarde.";
                         break;

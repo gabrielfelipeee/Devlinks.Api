@@ -113,7 +113,7 @@ namespace Application
             {
                 options.AddPolicy("localhost",
                     policy => policy
-                        .WithOrigins("http://localhost:5173") // Substitua pelo URL correto da sua aplicação cliente
+                        .WithOrigins("http://localhost:5173")
                         .AllowAnyHeader()
                         .AllowAnyMethod()
                         .AllowCredentials());
@@ -125,12 +125,12 @@ namespace Application
                 app.UseSwagger();
                 app.UseSwaggerUI();
             }
-             app.UseCors("localhost");
+            app.UseCors("localhost");
             app.UseAuthentication();
             app.UseAuthorization();
 
             app.MapControllers();
-           
+
 
             app.UseMiddleware<ControllerExceptionMiddleware>();
 
