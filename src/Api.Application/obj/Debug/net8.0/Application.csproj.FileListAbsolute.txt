@@ -100,3 +100,6 @@
 /home/gabriel/Desktop/Devlinks.Api/src/Api.Application/bin/Debug/net8.0/Middleware/Errors/devlinks/tsconfig.app.json
 /home/gabriel/Desktop/Devlinks.Api/src/Api.Application/bin/Debug/net8.0/Middleware/Errors/devlinks/tsconfig.json
 /home/gabriel/Desktop/Devlinks.Api/src/Api.Application/bin/Debug/net8.0/Middleware/Errors/devlinks/tsconfig.node.json
+/home/gabriel/Desktop/Devlinks.Api/src/Api.Application/bin/Debug/net8.0/Microsoft.Extensions.Configuration.dll
+/home/gabriel/Desktop/Devlinks.Api/src/Api.Application/bin/Debug/net8.0/Microsoft.Extensions.Configuration.Abstractions.dll
+/home/gabriel/Desktop/Devlinks.Api/src/Api.Application/bin/Debug/net8.0/Microsoft.Extensions.Primitives.dll

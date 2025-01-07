@@ -24,7 +24,7 @@ namespace Application
 
             // Configurções de injeção de dependências
             ConfigureService.ConfigureDependenciesService(builder.Services);
-            ConfigureRepository.ConfigureDependenciesRepository(builder.Services);
+            ConfigureRepository.ConfigureDependenciesRepository(builder.Services, builder.Configuration);
             ConfigureAutoMapper.ConfigureDependenciesAutoMapper(builder.Services);
             ConfigureFluentValidation.ConfigureDependenciesFluentValidation(builder.Services);
 

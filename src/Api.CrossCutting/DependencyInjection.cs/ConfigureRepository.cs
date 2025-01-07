@@ -4,19 +4,20 @@ using Api.Data.Repository;
 using Api.Domain.Interfaces;
 using Api.Domain.Repository;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace Api.CrossCutting.DependencyInjection
 {
     public class ConfigureRepository
     {
-        public static void ConfigureDependenciesRepository(IServiceCollection services)
+        public static void ConfigureDependenciesRepository(IServiceCollection services, IConfiguration configuration)
         {
             services.AddScoped(typeof(IRepository<>), typeof(BaseRepository<>));
             services.AddScoped<IUserRepository, UserImplementation>();
             services.AddScoped<ILinkRepository, LinkImplementation>();
 
-            string connectionString = "Server=localhost;Port=3306;Database=devlinks;Uid=root;Pwd=14589632@Gg";
+            string connectionString = configuration.GetConnectionString("DefaultConnection");
 
             services.AddDbContext<DevlinksContext>(options =>
             {
