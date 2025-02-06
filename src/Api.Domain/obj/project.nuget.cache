@@ -1,14 +1,14 @@
 {
   "version": 2,
-  "dgSpecHash": "tjzH9fHCdUhTThQXPj7mVKsgcK+84uolPZ43ROS+R71Ityjd8mdteOUVtWVHhdXV6GOpwGeoX68Q+XZ/BSi9og==",
+  "dgSpecHash": "MnjX7oRFMHLrIizboRf/Pop0/2ycVYhvuLYXEN4SG6JuMoMgw1jhdMfUZUgAuYMQmbRuH/WhNASmo171lmWXUw==",
   "success": true,
-  "projectFilePath": "/home/gabriel/Desktop/Devlinks.Api/src/Api.Domain/Domain.csproj",
+  "projectFilePath": "/home/gabrielfelipe/Área de trabalho/Devlinks.Api/src/Api.Domain/Domain.csproj",
   "expectedPackageFiles": [
-    "/home/gabriel/.nuget/packages/microsoft.identitymodel.abstractions/8.0.0/microsoft.identitymodel.abstractions.8.0.0.nupkg.sha512",
-    "/home/gabriel/.nuget/packages/microsoft.identitymodel.jsonwebtokens/8.0.0/microsoft.identitymodel.jsonwebtokens.8.0.0.nupkg.sha512",
-    "/home/gabriel/.nuget/packages/microsoft.identitymodel.logging/8.0.0/microsoft.identitymodel.logging.8.0.0.nupkg.sha512",
-    "/home/gabriel/.nuget/packages/microsoft.identitymodel.tokens/8.0.0/microsoft.identitymodel.tokens.8.0.0.nupkg.sha512",
-    "/home/gabriel/.nuget/packages/system.identitymodel.tokens.jwt/8.0.0/system.identitymodel.tokens.jwt.8.0.0.nupkg.sha512"
+    "/home/gabrielfelipe/.nuget/packages/microsoft.identitymodel.abstractions/8.0.0/microsoft.identitymodel.abstractions.8.0.0.nupkg.sha512",
+    "/home/gabrielfelipe/.nuget/packages/microsoft.identitymodel.jsonwebtokens/8.0.0/microsoft.identitymodel.jsonwebtokens.8.0.0.nupkg.sha512",
+    "/home/gabrielfelipe/.nuget/packages/microsoft.identitymodel.logging/8.0.0/microsoft.identitymodel.logging.8.0.0.nupkg.sha512",
+    "/home/gabrielfelipe/.nuget/packages/microsoft.identitymodel.tokens/8.0.0/microsoft.identitymodel.tokens.8.0.0.nupkg.sha512",
+    "/home/gabrielfelipe/.nuget/packages/system.identitymodel.tokens.jwt/8.0.0/system.identitymodel.tokens.jwt.8.0.0.nupkg.sha512"
   ],
   "logs": []
 }

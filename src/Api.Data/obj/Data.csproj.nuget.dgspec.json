@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "/home/gabriel/Desktop/Devlinks.Api/src/Api.Data/Data.csproj": {}
+    "/home/gabrielfelipe/Área de trabalho/Devlinks.Api/src/Api.Data/Data.csproj": {}
   },
   "projects": {
-    "/home/gabriel/Desktop/Devlinks.Api/src/Api.Data/Data.csproj": {
+    "/home/gabrielfelipe/Área de trabalho/Devlinks.Api/src/Api.Data/Data.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/gabriel/Desktop/Devlinks.Api/src/Api.Data/Data.csproj",
+        "projectUniqueName": "/home/gabrielfelipe/Área de trabalho/Devlinks.Api/src/Api.Data/Data.csproj",
         "projectName": "Data",
-        "projectPath": "/home/gabriel/Desktop/Devlinks.Api/src/Api.Data/Data.csproj",
-        "packagesPath": "/home/gabriel/.nuget/packages/",
-        "outputPath": "/home/gabriel/Desktop/Devlinks.Api/src/Api.Data/obj/",
+        "projectPath": "/home/gabrielfelipe/Área de trabalho/Devlinks.Api/src/Api.Data/Data.csproj",
+        "packagesPath": "/home/gabrielfelipe/.nuget/packages/",
+        "outputPath": "/home/gabrielfelipe/Área de trabalho/Devlinks.Api/src/Api.Data/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/home/gabriel/.nuget/NuGet/NuGet.Config"
+          "/home/gabrielfelipe/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net8.0"
@@ -26,8 +26,8 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "/home/gabriel/Desktop/Devlinks.Api/src/Api.Domain/Domain.csproj": {
-                "projectPath": "/home/gabriel/Desktop/Devlinks.Api/src/Api.Domain/Domain.csproj"
+              "/home/gabrielfelipe/Área de trabalho/Devlinks.Api/src/Api.Domain/Domain.csproj": {
+                "projectPath": "/home/gabrielfelipe/Área de trabalho/Devlinks.Api/src/Api.Domain/Domain.csproj"
               }
             }
           }
@@ -77,21 +77,21 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/lib64/dotnet/sdk/8.0.111/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/lib64/dotnet/sdk/8.0.112/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
-    "/home/gabriel/Desktop/Devlinks.Api/src/Api.Domain/Domain.csproj": {
+    "/home/gabrielfelipe/Área de trabalho/Devlinks.Api/src/Api.Domain/Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/gabriel/Desktop/Devlinks.Api/src/Api.Domain/Domain.csproj",
+        "projectUniqueName": "/home/gabrielfelipe/Área de trabalho/Devlinks.Api/src/Api.Domain/Domain.csproj",
         "projectName": "Domain",
-        "projectPath": "/home/gabriel/Desktop/Devlinks.Api/src/Api.Domain/Domain.csproj",
-        "packagesPath": "/home/gabriel/.nuget/packages/",
-        "outputPath": "/home/gabriel/Desktop/Devlinks.Api/src/Api.Domain/obj/",
+        "projectPath": "/home/gabrielfelipe/Área de trabalho/Devlinks.Api/src/Api.Domain/Domain.csproj",
+        "packagesPath": "/home/gabrielfelipe/.nuget/packages/",
+        "outputPath": "/home/gabrielfelipe/Área de trabalho/Devlinks.Api/src/Api.Domain/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/home/gabriel/.nuget/NuGet/NuGet.Config"
+          "/home/gabrielfelipe/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net8.0"
@@ -136,7 +136,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/lib64/dotnet/sdk/8.0.111/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/lib64/dotnet/sdk/8.0.112/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

@@ -29,3 +29,23 @@
 /home/gabriel/Desktop/Devlinks.Api/src/Api.CrossCutting/obj/Debug/net8.0/refint/CrossCutting.dll
 /home/gabriel/Desktop/Devlinks.Api/src/Api.CrossCutting/obj/Debug/net8.0/CrossCutting.pdb
 /home/gabriel/Desktop/Devlinks.Api/src/Api.CrossCutting/obj/Debug/net8.0/ref/CrossCutting.dll
+/home/gabrielfelipe/Área de trabalho/Devlinks.Api/src/Api.CrossCutting/bin/Debug/net8.0/CrossCutting.deps.json
+/home/gabrielfelipe/Área de trabalho/Devlinks.Api/src/Api.CrossCutting/bin/Debug/net8.0/CrossCutting.dll
+/home/gabrielfelipe/Área de trabalho/Devlinks.Api/src/Api.CrossCutting/bin/Debug/net8.0/CrossCutting.pdb
+/home/gabrielfelipe/Área de trabalho/Devlinks.Api/src/Api.CrossCutting/bin/Debug/net8.0/Data.dll
+/home/gabrielfelipe/Área de trabalho/Devlinks.Api/src/Api.CrossCutting/bin/Debug/net8.0/Domain.dll
+/home/gabrielfelipe/Área de trabalho/Devlinks.Api/src/Api.CrossCutting/bin/Debug/net8.0/Service.dll
+/home/gabrielfelipe/Área de trabalho/Devlinks.Api/src/Api.CrossCutting/bin/Debug/net8.0/Domain.pdb
+/home/gabrielfelipe/Área de trabalho/Devlinks.Api/src/Api.CrossCutting/bin/Debug/net8.0/Service.pdb
+/home/gabrielfelipe/Área de trabalho/Devlinks.Api/src/Api.CrossCutting/bin/Debug/net8.0/Data.pdb
+/home/gabrielfelipe/Área de trabalho/Devlinks.Api/src/Api.CrossCutting/obj/Debug/net8.0/CrossCutting.csproj.AssemblyReference.cache
+/home/gabrielfelipe/Área de trabalho/Devlinks.Api/src/Api.CrossCutting/obj/Debug/net8.0/CrossCutting.GeneratedMSBuildEditorConfig.editorconfig
+/home/gabrielfelipe/Área de trabalho/Devlinks.Api/src/Api.CrossCutting/obj/Debug/net8.0/CrossCutting.AssemblyInfoInputs.cache
+/home/gabrielfelipe/Área de trabalho/Devlinks.Api/src/Api.CrossCutting/obj/Debug/net8.0/CrossCutting.AssemblyInfo.cs
+/home/gabrielfelipe/Área de trabalho/Devlinks.Api/src/Api.CrossCutting/obj/Debug/net8.0/CrossCutting.csproj.CoreCompileInputs.cache
+/home/gabrielfelipe/Área de trabalho/Devlinks.Api/src/Api.CrossCutting/obj/Debug/net8.0/CrossCutting.sourcelink.json
+/home/gabrielfelipe/Área de trabalho/Devlinks.Api/src/Api.CrossCutting/obj/Debug/net8.0/CrossCutting.csproj.CopyComplete
+/home/gabrielfelipe/Área de trabalho/Devlinks.Api/src/Api.CrossCutting/obj/Debug/net8.0/CrossCutting.dll
+/home/gabrielfelipe/Área de trabalho/Devlinks.Api/src/Api.CrossCutting/obj/Debug/net8.0/refint/CrossCutting.dll
+/home/gabrielfelipe/Área de trabalho/Devlinks.Api/src/Api.CrossCutting/obj/Debug/net8.0/CrossCutting.pdb
+/home/gabrielfelipe/Área de trabalho/Devlinks.Api/src/Api.CrossCutting/obj/Debug/net8.0/ref/CrossCutting.dll

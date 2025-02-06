@@ -22,3 +22,16 @@
 /home/gabriel/Desktop/Devlinks.Api/src/Api.Domain/obj/Debug/net8.0/refint/Domain.dll
 /home/gabriel/Desktop/Devlinks.Api/src/Api.Domain/obj/Debug/net8.0/Domain.pdb
 /home/gabriel/Desktop/Devlinks.Api/src/Api.Domain/obj/Debug/net8.0/ref/Domain.dll
+/home/gabrielfelipe/Área de trabalho/Devlinks.Api/src/Api.Domain/bin/Debug/net8.0/Domain.deps.json
+/home/gabrielfelipe/Área de trabalho/Devlinks.Api/src/Api.Domain/bin/Debug/net8.0/Domain.dll
+/home/gabrielfelipe/Área de trabalho/Devlinks.Api/src/Api.Domain/bin/Debug/net8.0/Domain.pdb
+/home/gabrielfelipe/Área de trabalho/Devlinks.Api/src/Api.Domain/obj/Debug/net8.0/Domain.csproj.AssemblyReference.cache
+/home/gabrielfelipe/Área de trabalho/Devlinks.Api/src/Api.Domain/obj/Debug/net8.0/Domain.GeneratedMSBuildEditorConfig.editorconfig
+/home/gabrielfelipe/Área de trabalho/Devlinks.Api/src/Api.Domain/obj/Debug/net8.0/Domain.AssemblyInfoInputs.cache
+/home/gabrielfelipe/Área de trabalho/Devlinks.Api/src/Api.Domain/obj/Debug/net8.0/Domain.AssemblyInfo.cs
+/home/gabrielfelipe/Área de trabalho/Devlinks.Api/src/Api.Domain/obj/Debug/net8.0/Domain.csproj.CoreCompileInputs.cache
+/home/gabrielfelipe/Área de trabalho/Devlinks.Api/src/Api.Domain/obj/Debug/net8.0/Domain.sourcelink.json
+/home/gabrielfelipe/Área de trabalho/Devlinks.Api/src/Api.Domain/obj/Debug/net8.0/Domain.dll
+/home/gabrielfelipe/Área de trabalho/Devlinks.Api/src/Api.Domain/obj/Debug/net8.0/refint/Domain.dll
+/home/gabrielfelipe/Área de trabalho/Devlinks.Api/src/Api.Domain/obj/Debug/net8.0/Domain.pdb
+/home/gabrielfelipe/Área de trabalho/Devlinks.Api/src/Api.Domain/obj/Debug/net8.0/ref/Domain.dll

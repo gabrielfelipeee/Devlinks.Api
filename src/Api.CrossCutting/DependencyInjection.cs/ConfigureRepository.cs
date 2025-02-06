@@ -18,7 +18,6 @@ namespace Api.CrossCutting.DependencyInjection
             services.AddScoped<ILinkRepository, LinkImplementation>();
 
             string connectionString = configuration.GetConnectionString("DefaultConnection");
-
             services.AddDbContext<DevlinksContext>(options =>
             {
                 options.UseMySql(connectionString, ServerVersion.AutoDetect(connectionString));
