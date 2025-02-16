@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "/home/gabrielfelipe/Área de trabalho/Devlinks.Api/src/Api.CrossCutting/CrossCutting.csproj": {}
+    "/home/gabriel/Área de trabalho/Devlinks.Api/src/Api.CrossCutting/CrossCutting.csproj": {}
   },
   "projects": {
-    "/home/gabrielfelipe/Área de trabalho/Devlinks.Api/src/Api.CrossCutting/CrossCutting.csproj": {
+    "/home/gabriel/Área de trabalho/Devlinks.Api/src/Api.CrossCutting/CrossCutting.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/gabrielfelipe/Área de trabalho/Devlinks.Api/src/Api.CrossCutting/CrossCutting.csproj",
+        "projectUniqueName": "/home/gabriel/Área de trabalho/Devlinks.Api/src/Api.CrossCutting/CrossCutting.csproj",
         "projectName": "CrossCutting",
-        "projectPath": "/home/gabrielfelipe/Área de trabalho/Devlinks.Api/src/Api.CrossCutting/CrossCutting.csproj",
-        "packagesPath": "/home/gabrielfelipe/.nuget/packages/",
-        "outputPath": "/home/gabrielfelipe/Área de trabalho/Devlinks.Api/src/Api.CrossCutting/obj/",
+        "projectPath": "/home/gabriel/Área de trabalho/Devlinks.Api/src/Api.CrossCutting/CrossCutting.csproj",
+        "packagesPath": "/home/gabriel/.nuget/packages/",
+        "outputPath": "/home/gabriel/Área de trabalho/Devlinks.Api/src/Api.CrossCutting/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/home/gabrielfelipe/.nuget/NuGet/NuGet.Config"
+          "/home/gabriel/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net8.0"
@@ -26,14 +26,14 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "/home/gabrielfelipe/Área de trabalho/Devlinks.Api/src/Api.Data/Data.csproj": {
-                "projectPath": "/home/gabrielfelipe/Área de trabalho/Devlinks.Api/src/Api.Data/Data.csproj"
+              "/home/gabriel/Área de trabalho/Devlinks.Api/src/Api.Data/Data.csproj": {
+                "projectPath": "/home/gabriel/Área de trabalho/Devlinks.Api/src/Api.Data/Data.csproj"
               },
-              "/home/gabrielfelipe/Área de trabalho/Devlinks.Api/src/Api.Domain/Domain.csproj": {
-                "projectPath": "/home/gabrielfelipe/Área de trabalho/Devlinks.Api/src/Api.Domain/Domain.csproj"
+              "/home/gabriel/Área de trabalho/Devlinks.Api/src/Api.Domain/Domain.csproj": {
+                "projectPath": "/home/gabriel/Área de trabalho/Devlinks.Api/src/Api.Domain/Domain.csproj"
               },
-              "/home/gabrielfelipe/Área de trabalho/Devlinks.Api/src/Api.Service/Service.csproj": {
-                "projectPath": "/home/gabrielfelipe/Área de trabalho/Devlinks.Api/src/Api.Service/Service.csproj"
+              "/home/gabriel/Área de trabalho/Devlinks.Api/src/Api.Service/Service.csproj": {
+                "projectPath": "/home/gabriel/Área de trabalho/Devlinks.Api/src/Api.Service/Service.csproj"
               }
             }
           }
@@ -73,17 +73,17 @@
         }
       }
     },
-    "/home/gabrielfelipe/Área de trabalho/Devlinks.Api/src/Api.Data/Data.csproj": {
+    "/home/gabriel/Área de trabalho/Devlinks.Api/src/Api.Data/Data.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/gabrielfelipe/Área de trabalho/Devlinks.Api/src/Api.Data/Data.csproj",
+        "projectUniqueName": "/home/gabriel/Área de trabalho/Devlinks.Api/src/Api.Data/Data.csproj",
         "projectName": "Data",
-        "projectPath": "/home/gabrielfelipe/Área de trabalho/Devlinks.Api/src/Api.Data/Data.csproj",
-        "packagesPath": "/home/gabrielfelipe/.nuget/packages/",
-        "outputPath": "/home/gabrielfelipe/Área de trabalho/Devlinks.Api/src/Api.Data/obj/",
+        "projectPath": "/home/gabriel/Área de trabalho/Devlinks.Api/src/Api.Data/Data.csproj",
+        "packagesPath": "/home/gabriel/.nuget/packages/",
+        "outputPath": "/home/gabriel/Área de trabalho/Devlinks.Api/src/Api.Data/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/home/gabrielfelipe/.nuget/NuGet/NuGet.Config"
+          "/home/gabriel/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net8.0"
@@ -95,8 +95,8 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "/home/gabrielfelipe/Área de trabalho/Devlinks.Api/src/Api.Domain/Domain.csproj": {
-                "projectPath": "/home/gabrielfelipe/Área de trabalho/Devlinks.Api/src/Api.Domain/Domain.csproj"
+              "/home/gabriel/Área de trabalho/Devlinks.Api/src/Api.Domain/Domain.csproj": {
+                "projectPath": "/home/gabriel/Área de trabalho/Devlinks.Api/src/Api.Domain/Domain.csproj"
               }
             }
           }
@@ -125,6 +125,10 @@
               "target": "Package",
               "version": "[9.0.0, )"
             },
+            "Npgsql.EntityFrameworkCore.PostgreSQL": {
+              "target": "Package",
+              "version": "[8.0.0, )"
+            },
             "Pomelo.EntityFrameworkCore.MySql": {
               "target": "Package",
               "version": "[8.0.0, )"
@@ -150,17 +154,17 @@
         }
       }
     },
-    "/home/gabrielfelipe/Área de trabalho/Devlinks.Api/src/Api.Domain/Domain.csproj": {
+    "/home/gabriel/Área de trabalho/Devlinks.Api/src/Api.Domain/Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/gabrielfelipe/Área de trabalho/Devlinks.Api/src/Api.Domain/Domain.csproj",
+        "projectUniqueName": "/home/gabriel/Área de trabalho/Devlinks.Api/src/Api.Domain/Domain.csproj",
         "projectName": "Domain",
-        "projectPath": "/home/gabrielfelipe/Área de trabalho/Devlinks.Api/src/Api.Domain/Domain.csproj",
-        "packagesPath": "/home/gabrielfelipe/.nuget/packages/",
-        "outputPath": "/home/gabrielfelipe/Área de trabalho/Devlinks.Api/src/Api.Domain/obj/",
+        "projectPath": "/home/gabriel/Área de trabalho/Devlinks.Api/src/Api.Domain/Domain.csproj",
+        "packagesPath": "/home/gabriel/.nuget/packages/",
+        "outputPath": "/home/gabriel/Área de trabalho/Devlinks.Api/src/Api.Domain/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/home/gabrielfelipe/.nuget/NuGet/NuGet.Config"
+          "/home/gabriel/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net8.0"
@@ -209,17 +213,17 @@
         }
       }
     },
-    "/home/gabrielfelipe/Área de trabalho/Devlinks.Api/src/Api.Service/Service.csproj": {
+    "/home/gabriel/Área de trabalho/Devlinks.Api/src/Api.Service/Service.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/gabrielfelipe/Área de trabalho/Devlinks.Api/src/Api.Service/Service.csproj",
+        "projectUniqueName": "/home/gabriel/Área de trabalho/Devlinks.Api/src/Api.Service/Service.csproj",
         "projectName": "Service",
-        "projectPath": "/home/gabrielfelipe/Área de trabalho/Devlinks.Api/src/Api.Service/Service.csproj",
-        "packagesPath": "/home/gabrielfelipe/.nuget/packages/",
-        "outputPath": "/home/gabrielfelipe/Área de trabalho/Devlinks.Api/src/Api.Service/obj/",
+        "projectPath": "/home/gabriel/Área de trabalho/Devlinks.Api/src/Api.Service/Service.csproj",
+        "packagesPath": "/home/gabriel/.nuget/packages/",
+        "outputPath": "/home/gabriel/Área de trabalho/Devlinks.Api/src/Api.Service/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/home/gabrielfelipe/.nuget/NuGet/NuGet.Config"
+          "/home/gabriel/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net8.0"
@@ -231,8 +235,8 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "/home/gabrielfelipe/Área de trabalho/Devlinks.Api/src/Api.Domain/Domain.csproj": {
-                "projectPath": "/home/gabrielfelipe/Área de trabalho/Devlinks.Api/src/Api.Domain/Domain.csproj"
+              "/home/gabriel/Área de trabalho/Devlinks.Api/src/Api.Domain/Domain.csproj": {
+                "projectPath": "/home/gabriel/Área de trabalho/Devlinks.Api/src/Api.Domain/Domain.csproj"
               }
             }
           }

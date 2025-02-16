@@ -577,19 +577,19 @@
     ]
   },
   "packageFolders": {
-    "/home/gabrielfelipe/.nuget/packages/": {}
+    "/home/gabriel/.nuget/packages/": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/home/gabrielfelipe/Área de trabalho/Devlinks.Api/src/Api.Service/Service.csproj",
+      "projectUniqueName": "/home/gabriel/Área de trabalho/Devlinks.Api/src/Api.Service/Service.csproj",
       "projectName": "Service",
-      "projectPath": "/home/gabrielfelipe/Área de trabalho/Devlinks.Api/src/Api.Service/Service.csproj",
-      "packagesPath": "/home/gabrielfelipe/.nuget/packages/",
-      "outputPath": "/home/gabrielfelipe/Área de trabalho/Devlinks.Api/src/Api.Service/obj/",
+      "projectPath": "/home/gabriel/Área de trabalho/Devlinks.Api/src/Api.Service/Service.csproj",
+      "packagesPath": "/home/gabriel/.nuget/packages/",
+      "outputPath": "/home/gabriel/Área de trabalho/Devlinks.Api/src/Api.Service/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "/home/gabrielfelipe/.nuget/NuGet/NuGet.Config"
+        "/home/gabriel/.nuget/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net8.0"
@@ -601,8 +601,8 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "/home/gabrielfelipe/Área de trabalho/Devlinks.Api/src/Api.Domain/Domain.csproj": {
-              "projectPath": "/home/gabrielfelipe/Área de trabalho/Devlinks.Api/src/Api.Domain/Domain.csproj"
+            "/home/gabriel/Área de trabalho/Devlinks.Api/src/Api.Domain/Domain.csproj": {
+              "projectPath": "/home/gabriel/Área de trabalho/Devlinks.Api/src/Api.Domain/Domain.csproj"
             }
           }
         }

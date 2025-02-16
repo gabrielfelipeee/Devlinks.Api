@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "/home/gabrielfelipe/Área de trabalho/Devlinks.Api/src/Api.Domain/Domain.csproj": {}
+    "/home/gabriel/Área de trabalho/Devlinks.Api/src/Api.Domain/Domain.csproj": {}
   },
   "projects": {
-    "/home/gabrielfelipe/Área de trabalho/Devlinks.Api/src/Api.Domain/Domain.csproj": {
+    "/home/gabriel/Área de trabalho/Devlinks.Api/src/Api.Domain/Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/gabrielfelipe/Área de trabalho/Devlinks.Api/src/Api.Domain/Domain.csproj",
+        "projectUniqueName": "/home/gabriel/Área de trabalho/Devlinks.Api/src/Api.Domain/Domain.csproj",
         "projectName": "Domain",
-        "projectPath": "/home/gabrielfelipe/Área de trabalho/Devlinks.Api/src/Api.Domain/Domain.csproj",
-        "packagesPath": "/home/gabrielfelipe/.nuget/packages/",
-        "outputPath": "/home/gabrielfelipe/Área de trabalho/Devlinks.Api/src/Api.Domain/obj/",
+        "projectPath": "/home/gabriel/Área de trabalho/Devlinks.Api/src/Api.Domain/Domain.csproj",
+        "packagesPath": "/home/gabriel/.nuget/packages/",
+        "outputPath": "/home/gabriel/Área de trabalho/Devlinks.Api/src/Api.Domain/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/home/gabrielfelipe/.nuget/NuGet/NuGet.Config"
+          "/home/gabriel/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net8.0"
