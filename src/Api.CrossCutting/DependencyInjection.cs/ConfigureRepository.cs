@@ -20,7 +20,8 @@ namespace Api.CrossCutting.DependencyInjection
             string connectionString = configuration.GetConnectionString("DefaultConnection");
             services.AddDbContext<DevlinksContext>(options =>
             {
-                options.UseNpgsql(connectionString);
+
+                options.UseMySql(connectionString, ServerVersion.AutoDetect(connectionString));
             });
         }
     }

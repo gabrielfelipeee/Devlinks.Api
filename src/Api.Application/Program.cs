@@ -126,7 +126,6 @@ app.UseAuthorization();
 
 app.MapControllers();
 
-
 app.UseMiddleware<ControllerExceptionMiddleware>();
 
 app.Run();

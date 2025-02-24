@@ -9,9 +9,9 @@ namespace Api.Data.Context
         public DevlinksContext CreateDbContext(string[] args)
         {
             var optionsBuilder = new DbContextOptionsBuilder<DevlinksContext>();
-            string connectionString = "postgresql://gabriel:pDI5zVjOu6oMgU8cXnsfyYeLTd9T60ri@dpg-cuoutupu0jms73bideq0-a.oregon-postgres.render.com/db_devlinks";
+            string connectionString = "Server=localhost;Port=3306;Database=devlinks;Uid=root;Pwd=14589632";
 
-            optionsBuilder.UseNpgsql(connectionString);
+            optionsBuilder.UseMySql(connectionString, ServerVersion.AutoDetect(connectionString));
 
             return new DevlinksContext(optionsBuilder.Options);
         }
