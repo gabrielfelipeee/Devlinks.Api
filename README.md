@@ -43,7 +43,7 @@ dotnet restore
 3️⃣ Configure a string de conexão no arquivo appsettings.json:
 ```bash
 "ConnectionStrings": {
-  "DefaultConnection": ""Server=localhost;Port=3306;Database=[node_do_banco];Uid=root;Pwd=[sua_senha]"
+  "DefaultConnection": "Server=localhost;Port=3306;Database=[node_do_banco];Uid=root;Pwd=[sua_senha]"
 }
 ```
 4️⃣ Execute a API:
