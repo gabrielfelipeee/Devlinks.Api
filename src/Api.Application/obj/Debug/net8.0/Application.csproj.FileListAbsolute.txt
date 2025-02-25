@@ -239,3 +239,4 @@
 /home/gabriel/Área de trabalho/Devlinks.Api/src/Api.Application/obj/Debug/net8.0/Application.pdb
 /home/gabriel/Área de trabalho/Devlinks.Api/src/Api.Application/obj/Debug/net8.0/Application.genruntimeconfig.cache
 /home/gabriel/Área de trabalho/Devlinks.Api/src/Api.Application/obj/Debug/net8.0/ref/Application.dll
+/home/gabriel/Área de trabalho/Devlinks.Api/src/Api.Application/bin/Debug/net8.0/Swashbuckle.AspNetCore.Annotations.dll

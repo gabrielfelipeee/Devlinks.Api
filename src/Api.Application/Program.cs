@@ -102,7 +102,10 @@ builder.Services.AddSwaggerGen(c =>
                         }, new List<string>()
                    }
     });
+    c.EnableAnnotations();
 });
+
+
 // Cors 
 builder.Services.AddCors(options =>
 {
@@ -119,6 +122,7 @@ if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
     app.UseSwaggerUI();
+    app.MapSwagger();
 }
 app.UseCors("localhost");
 app.UseAuthentication();

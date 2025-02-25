@@ -2,6 +2,7 @@ using Api.Domain.Dtos.User;
 using Api.Domain.Interfaces.Services;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Swashbuckle.AspNetCore.Annotations;
 
 namespace Api.Application.Controllers
 {
@@ -15,6 +16,7 @@ namespace Api.Application.Controllers
             _userService = userService;
         }
 
+        [SwaggerOperation("Retorna uma lista de todos os usuários cadastrados. Requer permissão de Administrador.")]
         [Authorize(Policy = "Admin")]
         [HttpGet]
         public async Task<ActionResult> GetAllUsers()
@@ -23,6 +25,7 @@ namespace Api.Application.Controllers
             return Ok(result);
         }
 
+        [SwaggerOperation("Retorna um usuário específico pelo ID. Não requer autenticação.")]
         [AllowAnonymous]
         [HttpGet("by-id/{id}")]
         public async Task<ActionResult> GetUserById(Guid id)
@@ -31,6 +34,7 @@ namespace Api.Application.Controllers
             return Ok(result);
         }
 
+        [SwaggerOperation("Retorna um usuário específico pelo slug. Não requer autenticação.")]
         [AllowAnonymous]
         [HttpGet("by-slug/{slug}")]
         public async Task<ActionResult> GetBySlugAsync(string slug)
@@ -39,6 +43,7 @@ namespace Api.Application.Controllers
             return Ok(result);
         }
 
+        [SwaggerOperation("Retorna os dados do usuário autenticado. Requer autenticação.")]
         [Authorize(Policy = "Bearer")]
         [HttpGet("authenticated")]
         public async Task<ActionResult> GetUserAuthenticated()
@@ -47,6 +52,7 @@ namespace Api.Application.Controllers
             return Ok(result);
         }
 
+        [SwaggerOperation("Cria um novo usuário. Não requer autenticação.")]
         [AllowAnonymous]
         [HttpPost]
         public async Task<ActionResult> PostUser(UserDtoCreate user)
@@ -55,6 +61,7 @@ namespace Api.Application.Controllers
             return CreatedAtAction(nameof(GetUserById), new { id = result.Id }, result);
         }
 
+        [SwaggerOperation("Atualiza os dados de um usuário existente. Requer autenticação.")]
         [Authorize(Policy = "Bearer")]
         [HttpPut("{id}")]
         public async Task<ActionResult> PutUser(Guid id, UserDtoUpdate user)
@@ -63,6 +70,7 @@ namespace Api.Application.Controllers
             return Ok(result);
         }
 
+        [SwaggerOperation("Exclui um usuário pelo ID. Requer autenticação.")]
         [Authorize(Policy = "Bearer")]
         [HttpDelete("{id}")]
         public async Task<ActionResult> DeleteUser(Guid id)
